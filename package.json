@@ -1,0 +1,40 @@
+{
+  "name": "@cxbox-ui/schema",
+  "version": "0.6.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CX-Box/cxbox-schema.git"
+  },
+  "homepage": "https://github.com/CX-Box/cxbox-schema",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "bin": {
+    "schema": "./bin/build-schema"
+  },
+  "scripts": {
+    "lint": "prettier ./src --write",
+    "build": "tsc",
+    "gen:schema": "yarn build && node ./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "json-stable-stringify": "^1.0.1",
+    "path": "^0.12.7",
+    "typescript-json-schema": "^0.48.0"
+  },
+  "browser": {
+    "typescript-json-schema": false,
+    "path": false,
+    "fs": false
+  },
+  "description": "This package includes schemas shared by [Cxbox](https://github.com/CX-Box/cxbox) and [Cxbox-UI](https://github.com/CX-Box/cxbox-ui) in form of Typescript types, their corresponding JSON schemas and utilities to extend built-in types and rebuild the schemas.",
+  "bugs": {
+    "url": "https://github.com/CX-Box/cxbox-schema/issues"
+  },
+  "author": ""
+}

@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ViewNavigationGroup": {
+            "description": "Description of groups in the navigation menu.\n\nUsed to create nesting levels of menu items.",
+            "properties": {
+                "child": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ViewNavigationItem"
+                            },
+                            {
+                                "$ref": "#/definitions/ViewNavigationGroup"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "defaultView": {
+                    "type": "string"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "description": "TODO identifier will be nullable and string-only in 2.0.0",
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "child",
+                "title"
+            ],
+            "type": "object"
+        },
+        "ViewNavigationItem": {
+            "description": "Description of the destination in the navigation menu.",
+            "properties": {
+                "hidden": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "description": "TODO: remove in 2.0.0",
+                    "type": "string"
+                },
+                "viewName": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "navigation": {
+            "properties": {
+                "menu": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ViewNavigationItem"
+                            },
+                            {
+                                "$ref": "#/definitions/ViewNavigationGroup"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "menu"
+            ],
+            "type": "object"
+        },
+        "primaryViewName": {
+            "type": "string"
+        },
+        "primaryViews": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "title": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "navigation",
+        "primaryViewName",
+        "primaryViews",
+        "title"
+    ],
+    "type": "object"
+}
+

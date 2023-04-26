@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "baseUrl": "./src",
+      "declaration": true
+    },
+    "include": [
+        "src/index.ts"
+    ]
+}
