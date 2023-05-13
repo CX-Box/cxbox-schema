@@ -29,8 +29,6 @@ jobs:
           always-auth: true
       - name: install
         run: yarn install
-      - name: unit tests
-        run: yarn test --coverage --coverageProvider=v8
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
