@@ -5,7 +5,7 @@
 </a>
 <a href="https://sonarcloud.io/summary/overall?id=CX-Box_cxbox-schema"><img src="https://sonarcloud.io/api/project_badges/measure?project=CX-Box_cxbox-schema&metric=alert_status&branch=main" alt="sonar" title="">
 </a>
-</div>
+</div> 
 
 <blockquote>
 <div> 
