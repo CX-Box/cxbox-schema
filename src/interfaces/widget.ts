@@ -193,6 +193,7 @@ export interface WidgetFieldBase {
     drillDown?: boolean
     bgColor?: string
     bgColorKey?: string
+    title?: string
     label?: string
     snapshotKey?: string
     /**
