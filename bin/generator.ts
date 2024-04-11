@@ -1,5 +1,5 @@
 /*
- * © OOO "SI IKS LAB", 2022-2023
+ * © OOO "SI IKS LAB", 2022-2024
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { join } from 'path'
 import { existsSync, mkdirSync, writeFile } from 'fs'
 import * as stringify from 'json-stable-stringify'
@@ -57,6 +56,6 @@ function stringifyJson(src: TJS.Definition) {
     return stringify(src, { space: 4 }) + '\n\n'
 }
 
-if (typeof window === 'undefined' && require.main === module) {
+if (typeof window === 'undefined') {
     run()
 }
