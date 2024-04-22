@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 18
       - run: npm install
+      - run: npm run build
   reportCoverage:
     name: Report SonarCloud Coverage
     runs-on: ubuntu-latest
