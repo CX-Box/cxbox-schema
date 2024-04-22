@@ -1,5 +1,5 @@
 /*
- * © OOO "SI IKS LAB", 2022-2023
+ * © OOO "SI IKS LAB", 2022-2024
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
-#!/usr/bin/env node
-var app = require('../dist/generator.js');
-app.run();
+import {defineConfig} from 'tsup'
+
+export default defineConfig({
+    entry: ['src/index.ts'],
+    minify: true,
+    clean: true,
+    dts: true
+})

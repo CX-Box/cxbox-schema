@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-export { run } from './generator'
 export { ScreenMetaJson } from './files/ScreenMeta'
 export { ViewMetaJson } from './files/ViewMeta'
 export { WidgetMetaJson } from './files/WidgetMeta'
