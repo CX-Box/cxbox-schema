@@ -1,34 +1,31 @@
-name: Node.js Package
+name: Build package
+run-name: ${{github.actor}} is building schema package
 
 on:
   push:
-    branches-ignore:
-      - 'main'
   pull_request:
-    branches-ignore:
-      - 'main'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
+          node-version: 18
+      - run: npm install
   reportCoverage:
     name: Report SonarCloud Coverage
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '12.x'
+          node-version: 18
           always-auth: true
       - name: install
-        run: yarn install
+        run: npm install
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
